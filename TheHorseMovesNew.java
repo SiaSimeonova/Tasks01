@@ -49,5 +49,6 @@ public class TheHorseMovesNew {
 			}
 			System.out.println("|");
 		}
+		sc.close();
 	}
 }
