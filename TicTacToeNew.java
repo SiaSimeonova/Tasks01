@@ -34,30 +34,26 @@ public class TicTacToeNew {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		char[][] ticTacToe = new char[3][3];
-		int row1 = 0;
-		int col1 = 0;
+		int row = 0;
+		int col = 0;
 		int counter = 0;
 		char character = ' ';
 		boolean winner = false;
 		while (counter < 9) {
 			do {
 				if (counter % 2 == 0) {
+					character = 'X';
 					System.out.println("1: ");
 				}
 				if (counter % 2 != 0) {
+					character = 'O';
 					System.out.println("2: ");
 				}
-				row1 = sc.nextInt() - 1;
-				col1 = sc.nextInt() - 1;
-			} while (row1 > 2 || row1 < 0 || col1 > 2 || col1 < 0 || (ticTacToe[row1][col1] != '\u0000'));
+				row = sc.nextInt() - 1;
+				col = sc.nextInt() - 1;
+			} while (row > 2 || row < 0 || col > 2 || col < 0 || (ticTacToe[row][col] != '\u0000'));
 			counter++;
-			if (counter % 2 == 0) {
-				character = 'O';
-			}
-			if (counter % 2 != 0) {
-				character = 'X';
-			}
-			winner = move(ticTacToe, row1, col1, character, counter);
+			winner = move(ticTacToe, row, col, character, counter);
 
 			if (winner) {
 				if (character == 'X') {
@@ -77,4 +73,5 @@ public class TicTacToeNew {
 		}
 		sc.close();
 	}
+	
 }
